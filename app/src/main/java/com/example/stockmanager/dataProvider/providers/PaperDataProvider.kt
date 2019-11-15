@@ -32,6 +32,10 @@ class PaperDataProvider : DataProvider {
     }
 
     override fun deleteCategory(categoryId: String) {
+        val categoryIds = this.getCategoryIds()
+        val newCategoryIds = categoryIds.filter { it != categoryId}
+        this.saveCategoryIds(newCategoryIds.toTypedArray())
+
         Paper.book().delete(categoryId)
     }
 
