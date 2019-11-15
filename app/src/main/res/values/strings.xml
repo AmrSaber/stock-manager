@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Stock Manager</string>
+
+    <!-- Common -->
+    <string name="no_content">No items yet</string>
+    <string name="add">Add</string>
+    <string name="remove">Remove</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Categories -->
+    <string name="categories_title">Categories</string>
+    <string name="categories_add_category">Add category</string>
+    <string name="categories_category_name">Category name</string>
+    <string name="categories_remove_category_confirm">Remove category ?</string>
 </resources>
