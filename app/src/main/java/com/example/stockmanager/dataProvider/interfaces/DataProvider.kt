@@ -7,9 +7,11 @@ interface DataProvider {
     fun getCategoryIds(): Array<String>
     fun saveCategoryIds(categoryIds: Array<String>)
 
-    fun getCategory(categoryId: String): Category
     fun saveCategory(category: Category)
+    fun getCategory(categoryId: String): Category
+    fun deleteCategory(categoryId: String)
 
-    fun getItem(itemId: String): Item
     fun saveItem(item: Item)
+    fun getItem(itemId: String): Item
+    fun deleteItem(itemId: String)
 }

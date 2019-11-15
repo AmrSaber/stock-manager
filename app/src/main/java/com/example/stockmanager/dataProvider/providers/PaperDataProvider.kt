@@ -11,7 +11,7 @@ class PaperDataProvider : DataProvider {
     private val ALL_CATEGORY_IDS_KEY = "@paper:categories"
 
     override fun getCategoryIds(): Array<String> =
-        Paper.book().read<Array<String>>(ALL_CATEGORY_IDS_KEY)
+        Paper.book().read<Array<String>>(ALL_CATEGORY_IDS_KEY, emptyArray())
 
     override fun saveCategoryIds(categoryIds: Array<String>) {
         Paper.book().write(ALL_CATEGORY_IDS_KEY, categoryIds)
@@ -31,10 +31,18 @@ class PaperDataProvider : DataProvider {
         Paper.book().write(category.id, category)
     }
 
+    override fun deleteCategory(categoryId: String) {
+        Paper.book().delete(categoryId)
+    }
+
     override fun getItem(itemId: String): Item =
         Paper.book().read<Item>(itemId)
 
     override fun saveItem(item: Item) {
         Paper.book().write(item.id, item)
+    }
+
+    override fun deleteItem(itemId: String) {
+        Paper.book().delete(itemId)
     }
 }

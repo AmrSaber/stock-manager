@@ -6,20 +6,33 @@ import com.example.stockmanager.models.Category
 import com.example.stockmanager.models.Item
 
 object Provider : DataProvider {
-    private val paperDataProvider = PaperDataProvider()
+    private val dataProvider = PaperDataProvider()
 
-    override fun getCategoryIds() = paperDataProvider.getCategoryIds()
     override fun saveCategoryIds(categoryIds: Array<String>) {
-        paperDataProvider.saveCategoryIds(categoryIds)
+        dataProvider.saveCategoryIds(categoryIds)
     }
 
-    override fun getCategory(categoryId: String) = paperDataProvider.getCategory(categoryId)
+    override fun getCategoryIds() = dataProvider.getCategoryIds()
+
+
     override fun saveCategory(category: Category) {
-        paperDataProvider.saveCategory(category)
+        dataProvider.saveCategory(category)
     }
 
-    override fun getItem(itemId: String) = paperDataProvider.getItem(itemId)
+    override fun getCategory(categoryId: String) = dataProvider.getCategory(categoryId)
+
+    override fun deleteCategory(categoryId: String) {
+        dataProvider.deleteCategory(categoryId)
+    }
+
+
     override fun saveItem(item: Item) {
-        paperDataProvider.saveItem(item)
+        dataProvider.saveItem(item)
+    }
+
+    override fun getItem(itemId: String) = dataProvider.getItem(itemId)
+
+    override fun deleteItem(itemId: String) {
+        dataProvider.deleteItem(itemId)
     }
 }
