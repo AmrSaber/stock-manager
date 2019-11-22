@@ -25,7 +25,7 @@ class CategoriesRecyclerAdapter(
             .from(parent.context)
             .inflate(R.layout.item_category, parent, false)
 
-        return CategoryItemViewHolder(this, itemView)
+        return CategoryItemViewHolder(itemView, callerActivity, this)
     }
 
     override fun getItemCount() = categoryIds.size

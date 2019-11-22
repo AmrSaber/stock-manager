@@ -5,6 +5,7 @@
     <string name="no_content">No items yet</string>
     <string name="add">Add</string>
     <string name="remove">Remove</string>
+    <string name="update">Update</string>
     <string name="cancel">Cancel</string>
 
     <!-- Categories -->
@@ -12,4 +13,12 @@
     <string name="categories_add_category">Add category</string>
     <string name="categories_category_name">Category name</string>
     <string name="categories_remove_category_confirm">Remove category ?</string>
+
+    <!-- Items -->
+    <string name="items_title">Items</string>
+    <string name="items_add">Add item</string>
+    <string name="items_update">Update item</string>
+    <string name="items_item_name">Item name</string>
+    <string name="items_item_count">Item count</string>
+    <string name="items_confirm_remove">Remove item ?</string>
 </resources>

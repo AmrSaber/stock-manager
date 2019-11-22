@@ -13,5 +13,5 @@ interface DataProvider {
 
     fun saveItem(item: Item)
     fun getItem(itemId: String): Item
-    fun deleteItem(itemId: String)
+    fun deleteItem(item: Item)
 }

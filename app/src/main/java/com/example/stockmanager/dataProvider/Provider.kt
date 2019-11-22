@@ -32,7 +32,7 @@ object Provider : DataProvider {
 
     override fun getItem(itemId: String) = dataProvider.getItem(itemId)
 
-    override fun deleteItem(itemId: String) {
-        dataProvider.deleteItem(itemId)
+    override fun deleteItem(item: Item) {
+        dataProvider.deleteItem(item)
     }
 }

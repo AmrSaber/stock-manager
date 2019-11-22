@@ -33,8 +33,11 @@ class PaperDataProvider : DataProvider {
 
     override fun deleteCategory(categoryId: String) {
         val categoryIds = this.getCategoryIds()
-        val newCategoryIds = categoryIds.filter { it != categoryId}
+        val newCategoryIds = categoryIds.filter { it != categoryId }
         this.saveCategoryIds(newCategoryIds.toTypedArray())
+
+        val category = this.getCategory(categoryId)
+        category.itemIds.forEach { Paper.book().delete(it) }
 
         Paper.book().delete(categoryId)
     }
@@ -43,10 +46,21 @@ class PaperDataProvider : DataProvider {
         Paper.book().read<Item>(itemId)
 
     override fun saveItem(item: Item) {
+        val itemCategory = this.getCategory(item.categoryId)
+
+        if (item.id !in itemCategory.itemIds) {
+            itemCategory.itemIds.add(item.id)
+            itemCategory.save()
+        }
+
         Paper.book().write(item.id, item)
     }
 
-    override fun deleteItem(itemId: String) {
-        Paper.book().delete(itemId)
+    override fun deleteItem(item: Item) {
+        val itemCategory = this.getCategory(item.categoryId)
+        itemCategory.itemIds.remove(item.id)
+        itemCategory.save()
+
+        Paper.book().delete(item.id)
     }
 }
