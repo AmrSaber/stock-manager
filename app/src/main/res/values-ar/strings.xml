@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Stock Manager</string>
+
+    <!-- Common -->
+    <string name="no_content">لا شيء بعد</string>
+    <string name="add">إضافة</string>
+    <string name="remove">إزالة</string>
+    <string name="update">تعديل</string>
+    <string name="cancel">إلغاء</string>
+
+    <!-- Categories -->
+    <string name="categories_title">تصنيفات</string>
+    <string name="categories_add_category">إضافة تصنيف</string>
+    <string name="categories_category_name">اسم التصنيف</string>
+    <string name="categories_remove_category_confirm">إزالة التصنيف ؟</string>
+
+    <!-- Items -->
+    <string name="items_title">المحتويات</string>
+    <string name="items_add">إضافة عنصر</string>
+    <string name="items_update">تعديل عنصر</string>
+    <string name="items_item_name">اسم العنصر</string>
+    <string name="items_item_count">عدد العنصر</string>
+    <string name="items_confirm_remove">إزالة العنصر ؟</string>
+</resources>

@@ -8,10 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.stockmanager.R
+import com.example.stockmanager.common.Utils
 import com.example.stockmanager.common.ui.BaseActivity
 import com.example.stockmanager.dataProvider.Provider
 import com.example.stockmanager.screens.items.dialogs.AddItemDialog
 import com.example.stockmanager.screens.items.recycler.ItemsRecyclerAdapter
+import java.lang.Math.PI
 
 class ItemsActivity : BaseActivity(R.layout.activity_items) {
 
@@ -59,5 +61,8 @@ class ItemsActivity : BaseActivity(R.layout.activity_items) {
         }
 
         backButton.setOnClickListener { this.finish() }
+        if (Utils.Locale.languageCode == "ar") {
+            backButton.rotation = PI.toFloat()
+        }
     }
 }
