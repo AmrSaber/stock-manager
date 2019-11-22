@@ -23,7 +23,7 @@
         tools:text=""
         android:textSize="14sp"
         android:inputType="number"
-        android:hint="@string/items_item_name"
+        android:hint="@string/items_item_count"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

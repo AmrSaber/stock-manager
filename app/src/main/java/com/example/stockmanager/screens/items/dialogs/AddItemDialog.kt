@@ -24,9 +24,11 @@ class AddItemDialog(
         val itemName: TextView = view.findViewById(R.id.dialog_items_name)
         val itemCount: TextView = view.findViewById(R.id.dialog_items_count)
         builder.setPositiveButton(R.string.add) { _, _ ->
-            val item = Item(itemName.text.toString(), itemCount.text.toString().toInt(), categoryId)
-            Provider.saveItem(item)
-            onCreateListener()
+            if (itemName.text.toString().isNotBlank() && itemCount.text.toString().isNotBlank()) {
+                val item = Item(itemName.text.toString(), itemCount.text.toString().toInt(), categoryId)
+                Provider.saveItem(item)
+                onCreateListener()
+            }
         }
 
         builder.setNegativeButton(R.string.cancel) { dialog, _ -> dialog.dismiss() }

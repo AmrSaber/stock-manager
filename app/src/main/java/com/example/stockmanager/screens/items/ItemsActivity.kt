@@ -34,12 +34,16 @@ class ItemsActivity : BaseActivity(R.layout.activity_items) {
 
         // Get category id from caller intent
         val categoryId = intent.getStringExtra(CATEGORY_ID_KEY)
+        val category = Provider.getCategory(categoryId)
 
         // Initialize views
         val recycler: RecyclerView = this.findViewById(R.id.items_recycler)
         val noContentTextView: TextView = this.findViewById(R.id.items_no_content)
         val addButton: View = this.findViewById(R.id.items_add)
         val backButton: View = this.findViewById(R.id.items_back)
+        val titleTextView: TextView = this.findViewById(R.id.items_title)
+
+        titleTextView.setText(category.name)
 
         // This is a lambda because it will need to be passed to the adapter
         val handleVisibility = {
