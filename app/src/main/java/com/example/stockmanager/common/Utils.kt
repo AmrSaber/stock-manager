@@ -8,8 +8,9 @@ object Utils {
     fun getUniqueId(prefix: String) = "$prefix-${System.currentTimeMillis()}"
 
     object Locale {
-        private const val LANGUAGE_KEY = "@keys:language"
+        // TODO: enable language changing
         var languageCode: String = "ar"
+        private const val LANGUAGE_KEY = "@keys:language"
 //            get() = Paper.book().read(LANGUAGE_KEY, "ar")
 //            set(value) {
 //                Paper.book().write(LANGUAGE_KEY, value)
